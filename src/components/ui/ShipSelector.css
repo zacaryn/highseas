@@ -1,0 +1,97 @@
+.ship-selector {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 280px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  user-select: none;
+  pointer-events: auto;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.ship-selector h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 18px;
+  color: #f0f0f0;
+}
+
+.ship-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.ship-option {
+  background-color: rgba(50, 50, 50, 0.7);
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.ship-option:hover {
+  background-color: rgba(70, 70, 70, 0.8);
+}
+
+.ship-option.selected {
+  background-color: rgba(44, 62, 80, 0.8);
+  border-left: 3px solid #3498db;
+}
+
+.ship-name {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #3498db;
+}
+
+.ship-option.selected .ship-name {
+  color: #5dade2;
+}
+
+.ship-description {
+  font-size: 12px;
+  color: #ccc;
+  line-height: 1.4;
+}
+
+.current-ship {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ship-type {
+  font-weight: bold;
+  color: #3498db;
+}
+
+/* Scrollbar styling */
+.ship-selector::-webkit-scrollbar {
+  width: 6px;
+}
+
+.ship-selector::-webkit-scrollbar-track {
+  background: rgba(30, 30, 30, 0.5);
+  border-radius: 4px;
+}
+
+.ship-selector::-webkit-scrollbar-thumb {
+  background: rgba(80, 80, 80, 0.8);
+  border-radius: 4px;
+}
+
+.ship-selector::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 100, 100, 0.8);
+} 

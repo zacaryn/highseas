@@ -1,0 +1,177 @@
+.App {
+  text-align: center;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+canvas {
+  touch-action: none;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* UI Overlay elements */
+.ui-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Make all direct children of ui-overlay have pointer events */
+.ui-overlay > * {
+  pointer-events: auto;
+  margin-bottom: 15px;
+}
+
+/* Weather control positioning */
+.weather-control {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  max-width: calc(20% + 80px);
+  min-width: 140px;
+}
+
+/* Ship selector positioning */
+.ship-selector {
+  position: absolute;
+  top: 90px;
+  right: 20px;
+  max-width: calc(20% + 80px);
+  min-width: 140px;
+}
+
+/* Wind indicator positioning */
+.wind-indicator {
+  position: absolute;
+  bottom: 100px;
+  right: 20px;
+  max-width: calc(15% + 60px);
+  min-width: 120px;
+}
+
+/* Damage control positioning */
+.damage-control {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  max-width: calc(20% + 80px);
+  min-width: 140px;
+}
+
+/* Game controls UI */
+.game-controls {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 8px;
+  color: white;
+  max-width: 80%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.control-key {
+  display: inline-block;
+  background-color: #444;
+  border: 1px solid #666;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-weight: bold;
+  min-width: 20px;
+  text-align: center;
+}
+
+.control-description {
+  margin-left: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .ui-overlay {
+    padding: 10px;
+  }
+  
+  .weather-control, .ship-selector, .wind-indicator, .damage-control {
+    max-width: 30%;
+    min-width: 100px;
+    font-size: 0.9em;
+  }
+  
+  .ship-selector {
+    top: 80px;
+  }
+  
+  .game-controls {
+    padding: 5px;
+    gap: 5px;
+    max-width: 90%;
+  }
+  
+  .control-key {
+    padding: 3px 6px;
+    min-width: 15px;
+  }
+}
